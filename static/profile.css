@@ -68,10 +68,10 @@ nav{
     padding: 40px;
     margin-top: 10px;
     margin-bottom: 25px;
-    border-radius: 15px;
-    background: #383232;
+    color: brown;
+    background: #c0a8a8;
     text-align: center;
-    color: whitesmoke;
+    box-shadow: 0 8px 16px 5px rgba(46, 43, 43, 0.897);;
 }
 @media screen and (max-width:500px){
     nav{

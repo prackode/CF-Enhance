@@ -6,7 +6,10 @@
 body{
     color: whitesmoke;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: rgb(68, 99, 156);
+    background: url('night.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .box{
     width: 500px;
