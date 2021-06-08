@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/contests.css">
+    <title>Future Contests</title>
+</head>
+<body>
+  <center>
+    <h2 style="margin-top: 20px;">Upcoming Contests</h2>
+  </center>
+  <section style="margin-top: 100px;"></section>
+  {% for contest in contests %}
+  <span class="box">
+    <h5 style="color: antiquewhite;"><b>{{contest.name}}</b></h5>
+              <p>
+                <b>Start Time:</b> {{contest.startTimeSeconds}}
+              </p>
+              <p>
+                <b>Duration:</b> {{contest.durationSeconds}}
+              </p>
+              <a href="https://codeforces.com/contestRegistration/{{contest.id}}" target="_blank" style="text-decoration: none;"><input type="submit" value='Register »'></a>
+            </span>
+        {% endfor %}
+          </section>
+  </body>
+</html>

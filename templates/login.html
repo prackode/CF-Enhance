@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+  <form class="box" action="login" method="POST">
+    <h2> Account Login </h2>
+    <div data-validate="Username is required">
+      <input type="text" name="username" required placeholder="Codeforces Username" />
+    </div>
+    <input type="submit" value="Enter">
+  </form>
+  {% if give_error %}
+  <script>alert("Username Doesn't Exist");</script>
+  {% endif %}
+</body>
+</html>

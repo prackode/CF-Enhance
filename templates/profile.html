@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    <nav>
+      <div class="logo">CF-Enhance</div>
+      <div class="menu">
+        <a href="/contests" target="_blank">Future Contests</a>
+        <a href="/" style="color:rgb(255, 255, 255);font-size: bold;">Logout</a>
+      </div>
+    </nav>
+    <section class="profile">
+      <img src="{{user.titlePhoto}}" alt="avatar" style="box-shadow: 0 8px 16px 5px rgba(46, 43, 43, 0.897);;"><br><br>
+      <h2><b>{{user.firstName}} {{user.lastName}}</b></h2>
+      <h4 class="font-yellow"><b>{{user.rating}}</b> || <span class="custom-rank-color"><b>{{user.rank}}</b><span></span></h4>
+      <b>Last Online : </b>{{lastOnline}}<br>
+      {% if user.email|length > 0 %}
+      <b>EMAIL : </b>{{user.email}}<br>
+      {% endif %}
+      {% if user.contribution < 0 %}
+      <b>Contribution : <span style="color:red">{{user.contribution}}</span></b><br>
+      {% else %}
+      <b>Contribution : <span style="color:green">+{{user.contribution}}</span></b><br>
+      {% endif %}
+    </section>
+    <section class="tags">
+      <h1><u>Suggested</u> Practice Problems for <span style="background-color: lawngreen; padding: 1px 5px;">{{user.handle}}</span></h1><br>
+      <div class="row">
+      {% for key,problems in tags.items() %}
+      <div class="tag">
+        <h2>{{key}}</h2><br>
+        {% for problem in problems %}
+        <h3><a href="{{problem.1}}" class"problem" target="_blank">{{problem.0}}</a></h3>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    <form action="/login" method="POST">
+      <input type="text" name="username" value="{{user.handle}}">
+      <button type="submit">Refresh Problems</button>
+  </form>
+    </section>
+  </body>
+</html>
