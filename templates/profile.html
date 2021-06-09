@@ -37,7 +37,7 @@
       <div class="row">
       {% for key,problems in tags.items() %}
       <div class="tag">
-        <h1 style="text-transform:capitalize; font-size: 30px; text-align: center;">{{key}}</h1><br>
+        <h1 style="text-transform:capitalize;text-decoration: underline; font-size: 30px; text-align: center;">{{key}}</h1><br>
         <ul>
         {% for problem in problems %}
         <li style="padding-left: 5px;font-size: large;color: black;"><a href="{{problem.1}}" target="_blank">{{problem.0}}</a></li>
