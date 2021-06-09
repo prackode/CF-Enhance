@@ -67,10 +67,18 @@ nav{
     margin-top: 10px;
     margin-bottom: 25px;
     border-radius: 5px;
-    color: brown;
+    color: rgb(36, 133, 6);
     background: #e9cdb3;
-    text-align: center;
+    text-align:left;
     box-shadow: 0 8px 16px 5px rgba(46, 43, 43, 0.897);;
+}
+.tag a{
+    color: rgb(102, 100, 100);
+    text-decoration: none;
+    padding-left: 5px;
+}
+.tag a:visited{
+    color: rgb(43, 18, 134);
 }
 .hrstyle{
     border: 1px solid white;

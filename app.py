@@ -27,4 +27,4 @@ def contests():
     return render_template('future_contests.html', contests= contestsList)
 
 if __name__=="__main__":
-    app.run()
+    app.run(debug=True)
