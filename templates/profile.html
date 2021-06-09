@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/profile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <title>Profile</title>
 </head>
 <body>
@@ -12,6 +13,7 @@
       <div class="logo">CF-Enhance</div>
       <div class="menu">
         <a href="/contests" target="_blank">Future Contests</a>
+        <div class="mode">Dark mode:<span class="change">OFF</span></div>
         <a href="/" style="color:rgb(255, 255, 255);font-size: bold;">Logout</a>
       </div>
     </nav>
@@ -29,14 +31,15 @@
       <b>Contribution : <span style="color:green">+{{user.contribution}}</span></b><br>
       {% endif %}
     </section>
+    <hr>
     <section class="tags">
-      <h1><u>Suggested</u> Practice Problems for <span style="background-color: lawngreen; padding: 1px 5px;">{{user.handle}}</span></h1><br>
+      <h1><u>Suggested</u> Practice Problems for <span style="background-color: rgb(127, 146, 109); padding: 1px 5px;">{{user.handle}}</span></h1><br>
       <div class="row">
       {% for key,problems in tags.items() %}
       <div class="tag">
-        <h2>{{key}}</h2><br>
+        <h1>{{key}}</h1><br>
         {% for problem in problems %}
-        <a href="{{problem.1}}" target="_blank" style="text-decoration: none;"><h3>{{problem.0}}</h3></a>
+        <a href="{{problem.1}}" target="_blank" style="text-decoration: none;"><h3 style="color: rgb(92, 91, 91);">{{problem.0}}</h3></a>
         {% endfor %}
       </div>
       {% endfor %}
@@ -46,5 +49,18 @@
       <button type="submit">Refresh Problems</button>
   </form>
     </section>
+    <script>
+      $( ".change" ).on("click", function() {
+          if( $( "body" ).hasClass( "dark" )) {
+              $( "body" ).removeClass( "dark" );
+              $( ".change" ).text( "OFF" );
+              $( "hr" ).removeClass("hrstyle");
+          } else {
+              $( "body" ).addClass( "dark" );
+              $( ".change" ).text( "ON" );
+              $( "hr" ).addClass("hrstyle");
+          }
+      });
+  </script>
   </body>
 </html>
