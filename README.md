@@ -8,3 +8,5 @@ The app uses CodeForces API to fetch user's past performance and statistics to e
 Also it gives problem recommendation based on the weak areas and user's current rating, to improve performance in forthcoming contests
 
 Users can also view and register for upcoming contests on CodeForces...
+
+https://cf-enhance.herokuapp.com/
