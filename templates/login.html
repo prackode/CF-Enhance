@@ -18,5 +18,8 @@
   {% if give_error %}
   <script>alert("Username Doesn't Exist");</script>
   {% endif %}
+  {% if usererror %}
+  <script>alert("It seems that you haven't participated in a rated contest yet.\nI recommend problems to users based on past performance\nso please do come back after giving a rated contest...  :)");</script>
+ {% endif %}
 </body>
 </html>

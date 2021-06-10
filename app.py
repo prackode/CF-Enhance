@@ -14,7 +14,8 @@ def login():
     userInfo = userDetails(user, False)
     if(userInfo == False):
         return render_template('login.html',give_error=True)
-
+    if 'rating' not in userInfo:
+        return render_template('login.html',usererror=True)
     dt_object = convertUnixTime(userInfo['lastOnlineTimeSeconds'])
 
     weakTags = getTags(userInfo['handle'], userInfo['rating'])
